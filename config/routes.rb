@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  get 'users/index'
+  
+  root 'users#index'
 
-  get 'users/new'
+  # 'new_user_path'
+  get 'users/new' => 'users#new', as: :new_user
+  
+  get 'users/:id' => 'users#show', as: :user
 
-  get 'users/create'
 
-  get 'users/updated'
-
-  get 'users/destroy'
+  # this line builds the 'users_path'
+  post 'users' => 'users#create', as: :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

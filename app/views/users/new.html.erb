@@ -1,11 +1,15 @@
-<h1>Users#new</h1>
+<%= render 'layouts/header' %>
+
 <p>Find me in app/views/users/new.html.erb</p>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
+		<%# raise @user.inspect %>
 		<%= form_for(@user) do |f| %>
 			
-				
+				<!-- Notice we render an 'error_messages' partial -->
+				<%= render 'shared/error_messages' %>
+
 				<%= f.label :name %>
 				<%= f.text_field :name, class: 'form-control' %>
 				
@@ -20,7 +24,8 @@
 		
 				<%= f.submit "Create User", class: "btn btn-primary" %> 
 		
+		
 		<% end %>
 	</div>
-
+</div>
 	
